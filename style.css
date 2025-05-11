@@ -1,0 +1,417 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  
+  body {
+    /* 4. Add accessible line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--color-primary-900);
+    color: var(--color-white);
+    font-family: "Open sans", sans-serif;
+    font-size: 16px;
+  }
+  
+  /* 6. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 7. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 8. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 9. Improve line wrapping */
+ 
+  /*
+    10. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+:root{
+    /* colors */
+    --color-primary-850: hsl(217, 28%, 15%);
+    --color-primary-800: hsl(219, 30%, 18%);
+    --color-primary-950: hsl(216, 53%, 9%);
+    --color-primary-900: hsl(218, 28%, 13%);
+
+    --color-teel-200: hsl(176, 68%, 64%);
+    --color-cyan-500: hsl(198, 60%, 50%);
+    --color-red-500: hsl(0, 100%, 63%);
+
+    --color-white: hsl(0,0%,100%);
+
+    /* gaps */
+    --gap-sml: 1rem;
+    --gap-md: 2rem;
+    --gap-lg: 3rem;
+}
+
+/* h1,h2,h3,h4,h5,a{
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+} */
+
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+h5{
+    font-size: 1.25rem;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: "Raleway", sans-serif;
+}
+
+
+.flex-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    padding: 2rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.btn{
+    background: linear-gradient(var(--color-cyan-500), var(--color-teel-200));
+    padding: var(--gap-sml) ;
+    min-width: 250px;
+    border-radius: var(--gap-md);
+    font-weight: 600;
+}
+
+
+/* header */
+header{
+    background-color: var(--color-primary-850);
+
+}
+.container-header{
+    padding: var(--gap-md);
+    width: 100%;
+}
+
+header img.logo{
+    width: 100px;
+    margin-right: auto;
+}
+
+header nav ul{
+    gap: var(--gap-sml);
+}
+
+
+/* intro */
+section.intro-img{
+    background-color: var(--color-primary-850);
+    display: grid;
+    place-content: center;
+    /* position: relative; */
+}
+
+
+/* section.intro-img::after{
+    content: "";
+    position: absolute;
+    background: url("images/bg-curvy-mobile.svg");
+    background-repeat: no-repeat;
+    background-position:  center;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+}
+ */
+
+
+
+
+/* hero */
+
+
+
+section.hero{
+    
+    background: url("images/bg-curvy-mobile.svg");
+    background-repeat: no-repeat;
+    background-position:  top center;
+    background-size: contain;
+    margin-top: -5rem;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+section.hero .flex-column{
+    padding-top: 2rem;
+    text-align: center;
+    gap: var(--gap-md);
+    /* background: url(images/bg-curvy-mobile.svg); */
+}
+
+/* features */
+
+.features .container-sml{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-lg);
+}
+
+
+.feature{
+    gap: var(--gap-sml);
+    text-align: center;
+}
+
+/* how work */
+
+.how-work .container-lg{
+    gap: var(--gap-md);
+}
+
+.how-work .container-lg .how-work-body{
+    gap: var(--gap-sml);
+    align-items: flex-start;
+}
+
+
+a.btn-how-work{
+    gap: calc((var(--gap-sml)/3));
+    border-bottom: 1px solid var(--color-teel-200);
+    color: var(--color-teel-200);
+}
+
+/* testimonial */
+
+section.testimonial .container-lg{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-md);
+}
+
+section.testimonial .container-lg .testimonial-card{
+    background-color: var(--color-primary-800);
+    padding: var(--gap-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sml);
+    box-shadow: 5px 5px 15px var(--color-primary-800);
+}
+
+.testimonial-card .card-profile{
+    display: flex;
+    gap: calc(var(--gap-sml) - 0.3rem);
+    align-items: center;
+}
+
+.testimonial-card .card-profile img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* call to action*/
+
+section.call-to-action{
+    position: relative;
+}
+
+section.call-to-action::after{
+    content: "";
+    background-color: var(--color-primary-950);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+}
+
+section.call-to-action .container-sml{
+    background-color: var(--color-primary-850);
+    padding:  var(--gap-md);
+    text-align: center;
+    gap: var(--gap-sml);
+}
+
+form{
+    width: 100%;
+    gap: var(--gap-sml);
+}
+
+form input,
+form a{
+    width: 100%;
+}
+
+form input{
+    padding: var(--gap-sml);
+    border-radius: var(--gap-md);
+    outline: transparent;
+    
+}
+
+
+/* footer */
+
+img.footer-logo{
+    margin-bottom: var(--gap-sml);
+}
+
+footer {
+    background-color: var(--color-primary-950);
+    padding: 2rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-md);
+}
+
+footer .footer-grid .flex-footer{
+    display: flex;
+    align-items: start;
+    
+    gap: var(--gap-sml);
+    margin-bottom: var(--gap-sml);
+}
+
+footer .footer-grid .flex-footer img{
+    margin-top: calc(var(--gap-sml)/3);
+}
+
+footer .footer-grid .flex-column{
+    align-items: start;
+    gap: var(--gap-sml);
+}
+
+
+footer .footer-grid .grid-clm-4{
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (min-width: 880px){
+    .container-header{
+        padding: calc(var(--gap-lg)*1.5) var(--gap-md) ;
+        width: 100%;
+    }
+
+    header nav ul{
+        gap: var(--gap-lg);
+    }
+
+
+    .container-header,
+    .container-lg{
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .container-sml{
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+
+    
+    section.hero .container-sml{
+        max-width: 50%;
+    }
+
+
+
+    .features .container-sml{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        
+        justify-content: space-between;
+    }
+
+    .how-work .container-lg{
+        flex-direction: row;
+    }
+
+    .how-work .container-lg > *{
+        flex: 1 1 0;
+    }
+    
+    section.testimonial .container-lg{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: var(--gap-md);
+    }
+
+
+    form.flex-column{
+        /* padding: var(--gap-lg); */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    form input{
+        min-width: 70%;
+    }
+
+    form .btn{
+        min-width: 30%;
+    }
+
+    footer .footer-grid{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: 1fr;
+    }
+
+    footer .flex-column{
+        justify-content: start;
+    }
+
+}
