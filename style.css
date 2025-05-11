@@ -6,6 +6,7 @@
   /* 2. Remove default margin */
   * {
     margin: 0;
+    padding: 0;
   }
   
   
@@ -65,10 +66,12 @@
     --gap-lg: 3rem;
 }
 
-/* h1,h2,h3,h4,h5,a{
+h1,h2,h3,h4,h5{
     font-family: "Raleway", sans-serif;
     font-weight: 700;
-} */
+}
+
+
 
 h1{
     font-size: 2rem;
@@ -90,8 +93,12 @@ a{
     text-decoration: none;
     color: var(--color-white);
     font-family: "Raleway", sans-serif;
+    font-weight: 400;
 }
 
+ul a:hover{
+    text-decoration: underline;
+}
 
 .flex-row{
     display: flex;
@@ -108,19 +115,25 @@ a{
 }
 
 section{
-    padding: 2rem;
+    padding: calc(var(--gap-lg)*1.5) var(--gap-md);
     width: 100%;
     margin: 0 auto;
 }
 
-.btn{
+a.btn{
     background: linear-gradient(var(--color-cyan-500), var(--color-teel-200));
-    padding: var(--gap-sml) ;
-    min-width: 250px;
+    padding: var(--gap-sml) ; 
     border-radius: var(--gap-md);
     font-weight: 600;
 }
 
+a.btn:hover{
+    background: var(--color-teel-200);
+}
+
+a.btn.btn-hero{
+    min-width: 250px;
+}
 
 /* header */
 header{
@@ -140,6 +153,8 @@ header img.logo{
 header nav ul{
     gap: var(--gap-sml);
 }
+
+
 
 
 /* intro */
@@ -231,6 +246,7 @@ section.testimonial .container-lg{
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--gap-md);
+    padding-bottom: calc(var(--gap-lg)*2);
 }
 
 section.testimonial .container-lg .testimonial-card{
@@ -345,11 +361,28 @@ footer .footer-grid .grid-clm-4{
         width: 100%;
     }
 
+    h1{
+        font-size: 2.5rem;
+    }
+    
+    h2{
+        font-size: 1.5rem;
+    }
+    
+    h5{
+        font-size: 2.5rem;
+    }
+
     header nav ul{
         gap: var(--gap-lg);
     }
 
-
+    section{
+        padding: calc(var(--gap-lg)*2) 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
     .container-header,
     .container-lg{
         max-width: 90%;
@@ -387,6 +420,7 @@ footer .footer-grid .grid-clm-4{
         display: grid;
         grid-template-columns: repeat(3,1fr);
         gap: var(--gap-md);
+        padding-bottom: calc(var(--gap-lg)*4);
     }
 
 
@@ -395,6 +429,10 @@ footer .footer-grid .grid-clm-4{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    section.call-to-action .container-sml{
+        padding: var(--gap-lg) calc(var(--gap-lg)*2);
     }
 
     form input{
@@ -406,12 +444,23 @@ footer .footer-grid .grid-clm-4{
     }
 
     footer .footer-grid{
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(5,1fr);
         grid-template-rows: 1fr;
+        justify-items: center;
+        
+    }
+
+    img.footer-logo{
+        margin-bottom: var(--gap-lg);
     }
 
     footer .flex-column{
         justify-content: start;
+        
+    }
+
+    footer .footer-grid .grid-clm-4{
+        text-align: center;
     }
 
 }
